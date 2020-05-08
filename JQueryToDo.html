@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>JQuery To Do list</title>
+    <link rel="stylesheet" type="text/css" href="JQueryToDo.css">
+</head>
+<body>
+    <h1>To Do List</h1>
+    <ul id="todo">
+        
+    </ul>
+
+    <form id="form">
+        <input type="text" id="todoInput" name="choreInput">
+    </form>
+
+    <button id="addtolist">
+        Add to list
+    </button>
+  
+    <script type="text/javascript" src="http://code.jquery.com/jquery-3.4.1.min.js">
+    </script>
+    <script type="text/javascript">
+
+        $("#addtolist").click(function(){ 
+            $("ul").append($("<li>", { 
+            text: $("input").val() 
+            }));
+        });
+        $("#addtolist").click(function(){ 
+            $("input").val(""); 
+        })
+        $("#todo").on("click", "li", function(){ 
+            $(this).remove(); 
+        })
+
+    </script>
+
+</body>
+</html>
